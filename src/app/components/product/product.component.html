@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <button type="button" class="btn btn-success" (click)="addProduct()"><i class="bi bi-file-plus"></i> Add Product</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Photos</th>
+                <th scope="col">Name</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td><img src={{product.photo}} class="img-thumbnail"
+                        style="width: 120px; height: 120px; object-fit: fill;" alt="..."></td>
+                <td>{{product.name}}</td>
+                <td>{{product.stock}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button type="button" class="btn btn-link" (click)="editProduct(product.id)"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-link" (click)="deleteProduct(product)"><i class="bi bi-trash-fill"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
